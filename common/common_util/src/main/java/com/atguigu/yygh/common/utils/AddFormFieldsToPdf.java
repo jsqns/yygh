@@ -10,52 +10,56 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.math.BigDecimal;
 
 public class AddFormFieldsToPdf {
+    BigDecimal bigDecimal1;
     public static void main(String[] args) throws Exception {
+        Test1 test1 = new Test1();
+        BigDecimal bigDecimal = new BigDecimal(1).add(test1.getBigDecimal());
 
-        //创建PdfDocument对象，并添加页面
-        PdfDocument doc = new PdfDocument();
-        PdfPageBase page = doc.getPages().add();
-
-        //初始化位置变量
-        float baseX = 100;
-        float baseY = 0;
-
-        //创建画刷对象
-        PdfSolidBrush brush1 = new PdfSolidBrush(new PdfRGBColor(Color.BLUE));
-        PdfSolidBrush brush2 = new PdfSolidBrush(new PdfRGBColor(Color.black));
-        PdfSolidBrush brush3 = new PdfSolidBrush(new PdfRGBColor(Color.RED));
-
-        //创建TrueType字体
-        PdfTrueTypeFont font= new PdfTrueTypeFont(new Font("等线",Font.PLAIN, 10),true);
-        PdfTrueTypeFont font1= new PdfTrueTypeFont(new Font("等线",Font.PLAIN, 20),true);
-
-        //添加文本框
-        String text = "";//添加文本
-        page.getCanvas().drawString(text, font, brush2, new Point2D.Float(60, 80));//在PDF中绘制文字
-        page.getCanvas().drawString("大数据授权协议",font1, brush2,  new Point2D.Float(200, 40));
-        page.getCanvas().drawString("确认人：",font, brush2,  new Point2D.Float(320, 600));
-        page.getCanvas().drawString("身份证号码：",font, brush2,  new Point2D.Float(320, 615));
-        page.getCanvas().drawString("确认日期：",font, brush2,  new Point2D.Float(320, 630));
-        Rectangle2D.Float tbxBounds = new Rectangle2D.Float(380, 600 , 150, 15);//创建Rectangle2D对象
-        PdfTextBoxField textBox = new PdfTextBoxField(page, "TextBox");//创建文本框对象
-        textBox.setBounds(tbxBounds);//设置文本框的Bounds
-//        textBox.setText("刘兴");//填充文本框
-        textBox.setFont(font);//应用文本框的字体
-        Rectangle2D.Float tbxBounds1 = new Rectangle2D.Float(380, 615 , 150, 15);//创建Rectangle2D对象
-        PdfTextBoxField textBox1 = new PdfTextBoxField(page, "TextBox");//创建文本框对象
-        textBox1.setBounds(tbxBounds1);//设置文本框的Bounds
-//        textBox.setText("刘兴");//填充文本框
-        textBox1.setFont(font);//应用文本框的字体
-        Rectangle2D.Float tbxBounds2 = new Rectangle2D.Float(380, 630 , 150, 15);//创建Rectangle2D对象
-        PdfTextBoxField textBox2 = new PdfTextBoxField(page, "TextBox");//创建文本框对象
-        textBox2.setBounds(tbxBounds2);//设置文本框的Bounds
-//        textBox.setText("刘兴");//填充文本框
-        textBox2.setFont(font);//应用文本框的字体
-        doc.getForm().getFields().add(textBox);//添加文本框到PDF域的集合
-        doc.getForm().getFields().add(textBox1);//添加文本框到PDF域的集合
-        doc.getForm().getFields().add(textBox2);//添加文本框到PDF域的集合
+//        //创建PdfDocument对象，并添加页面
+//        PdfDocument doc = new PdfDocument();
+//        PdfPageBase page = doc.getPages().add();
+//
+//        //初始化位置变量
+//        float baseX = 100;
+//        float baseY = 0;
+//
+//        //创建画刷对象
+//        PdfSolidBrush brush1 = new PdfSolidBrush(new PdfRGBColor(Color.BLUE));
+//        PdfSolidBrush brush2 = new PdfSolidBrush(new PdfRGBColor(Color.black));
+//        PdfSolidBrush brush3 = new PdfSolidBrush(new PdfRGBColor(Color.RED));
+//
+//        //创建TrueType字体
+//        PdfTrueTypeFont font= new PdfTrueTypeFont(new Font("等线",Font.PLAIN, 10),true);
+//        PdfTrueTypeFont font1= new PdfTrueTypeFont(new Font("等线",Font.PLAIN, 20),true);
+//
+//        //添加文本框
+//        String text = "";//添加文本
+//        page.getCanvas().drawString(text, font, brush2, new Point2D.Float(60, 80));//在PDF中绘制文字
+//        page.getCanvas().drawString("大数据授权协议",font1, brush2,  new Point2D.Float(200, 40));
+//        page.getCanvas().drawString("确认人：",font, brush2,  new Point2D.Float(320, 600));
+//        page.getCanvas().drawString("身份证号码：",font, brush2,  new Point2D.Float(320, 615));
+//        page.getCanvas().drawString("确认日期：",font, brush2,  new Point2D.Float(320, 630));
+//        Rectangle2D.Float tbxBounds = new Rectangle2D.Float(380, 600 , 150, 15);//创建Rectangle2D对象
+//        PdfTextBoxField textBox = new PdfTextBoxField(page, "TextBox");//创建文本框对象
+//        textBox.setBounds(tbxBounds);//设置文本框的Bounds
+////        textBox.setText("刘兴");//填充文本框
+//        textBox.setFont(font);//应用文本框的字体
+//        Rectangle2D.Float tbxBounds1 = new Rectangle2D.Float(380, 615 , 150, 15);//创建Rectangle2D对象
+//        PdfTextBoxField textBox1 = new PdfTextBoxField(page, "TextBox");//创建文本框对象
+//        textBox1.setBounds(tbxBounds1);//设置文本框的Bounds
+////        textBox.setText("刘兴");//填充文本框
+//        textBox1.setFont(font);//应用文本框的字体
+//        Rectangle2D.Float tbxBounds2 = new Rectangle2D.Float(380, 630 , 150, 15);//创建Rectangle2D对象
+//        PdfTextBoxField textBox2 = new PdfTextBoxField(page, "TextBox");//创建文本框对象
+//        textBox2.setBounds(tbxBounds2);//设置文本框的Bounds
+////        textBox.setText("刘兴");//填充文本框
+//        textBox2.setFont(font);//应用文本框的字体
+//        doc.getForm().getFields().add(textBox);//添加文本框到PDF域的集合
+//        doc.getForm().getFields().add(textBox1);//添加文本框到PDF域的集合
+//        doc.getForm().getFields().add(textBox2);//添加文本框到PDF域的集合
 //        baseY +=25;
 
 //        //添加复选框
@@ -133,6 +137,6 @@ public class AddFormFieldsToPdf {
 //        doc.getForm().getFields().add(buttonField);//添加按钮到PDF
 
         //保存文档
-        doc.saveToFile("d:\\result2.pdf", FileFormat.PDF);
+//        doc.saveToFile("d:\\result2.pdf", FileFormat.PDF);
     }
 }
