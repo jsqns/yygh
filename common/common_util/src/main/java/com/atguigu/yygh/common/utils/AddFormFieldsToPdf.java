@@ -1,21 +1,11 @@
 package com.atguigu.yygh.common.utils;
 
-import com.spire.pdf.FileFormat;
-import com.spire.pdf.PdfDocument;
-import com.spire.pdf.PdfPageBase;
-import com.spire.pdf.fields.*;
-import com.spire.pdf.graphics.*;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
 import java.math.BigDecimal;
 
 public class AddFormFieldsToPdf {
     BigDecimal bigDecimal1;
     public static void main(String[] args) throws Exception {
-        Test1 test1 = new Test1();
+        CanonPiano test1 = new CanonPiano();
         BigDecimal bigDecimal = new BigDecimal(1).add(test1.getBigDecimal());
 
 //        //创建PdfDocument对象，并添加页面
