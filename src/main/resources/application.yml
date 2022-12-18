@@ -24,6 +24,6 @@ swagger:
         name: JsQns
         url: www.baidu.com
     base-package: com.js.summary
-    group-name: "V2/api/03"
+    group-name: "V2/api/04"
 
 
