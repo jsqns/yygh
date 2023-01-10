@@ -1,6 +1,5 @@
 package com.js.summary.typeHandler;
 
-import com.alibaba.fastjson.JSON;
 import com.js.summary.common.utils.JsonUtils;
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;
